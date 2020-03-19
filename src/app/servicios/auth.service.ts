@@ -11,12 +11,14 @@ import { UserInterface } from '../models/user-interface';
 })
 export class AuthService {
   // url='http://192.168.21.154:50000/usuarios';
-  url='http://c25bf4e9.ngrok.io/usuarios';
+  url='http://www.nbmayorista.com/api';
   
-  headers: HttpHeaders | { [header: string]: string | string[]; };
   constructor(public http: HttpClient) { 
     //  console.log('Hola Mundo');
   }
+  headers: HttpHeaders = new HttpHeaders({
+    "Content-Type": "application/json"
+  });
   // obtenerDatos(){
   //   return this.http.get(this.url);
   //   console.log()
@@ -27,7 +29,7 @@ export class AuthService {
   }
 
   login(usuario: string, clave: string): Observable<any> {
-    const url_api = "http://c25bf4e9.ngrok.io/usuarios";
+    const url_api = "http://www.nbmayorista.com/api";
     return this.http
       .post <UserInterface> (
         url_api,

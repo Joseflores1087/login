@@ -16,8 +16,8 @@ export class LoginPage implements OnInit {
 
  constructor(public authService: AuthService, public router: Router) { }
  private user: UserInterface = {
-  usuario: "",
-  clave: ""
+  usuario: '',
+  clave: ''
 };
 
   ngOnInit() {
