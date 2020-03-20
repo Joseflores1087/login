@@ -6,20 +6,18 @@
 
 <ion-content color="primary">
   <ion-card>
-    <ion-card-content>
-      <ion-item>
-        <ion-label position="floating">Usuario</ion-label>
-        <ion-input type="text" name="usuario"></ion-input>
-      <!-- </ion-item>
-      <ion-item> -->
-        <ion-label position="floating">Contraseña</ion-label>
-        <ion-input type="password" name="clave"></ion-input>
-      </ion-item>
-      <br>
-    
-      <ion-button (click)="OnSubmitLogin()"  expand="block">Ingresar</ion-button>
+    <form (submit)="OnSubmitLogin()" [formGroup]="loginForm">
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Usuario</ion-label>
+          <ion-input type="text" formControlName="usuario"></ion-input>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input type="password" formControlName="clave"></ion-input>
+        </ion-item>
+        <br>
+      <ion-button type="submit"  expand="block">Ingresar</ion-button>
     </ion-card-content>
- 
+  </form>
   
   </ion-card>
 </ion-content>

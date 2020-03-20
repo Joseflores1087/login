@@ -9,19 +9,20 @@ import { AuthService } from '../servicios/auth.service';
 })
 export class HomePage implements OnInit{
   usuarios:any[];
+  nombre: string;
   constructor(public navCtrl: NavController, 
               public authService: AuthService) { 
+                
          console.log('Ingreso');
  this.authService.obtenerDatos()
  .subscribe(
  (data)=>{this.usuarios=data; console.log(data);
  },
- (error)=>{console.log(error);}
- )
+ (error)=>{console.log(error);
+})
        }
-    
- 
-   ngOnInit() {
-   }
- 
+       ngOnInit() {
+        
+      }
+      
  }
